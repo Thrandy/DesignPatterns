@@ -12,21 +12,22 @@ class TypeScriptIterableIterator implements IterableIterator<Object> {
      }
 
     public next(): IteratorResult<Object> {
-        if (this.hasNext()){
+      if (this.hasNext()) { 
             return {
                 done: false,
-                value: this.collection[this.pointer++] 
+                value: this.collection[this.pointer++]
             }
-       }
-       else {
-           return {
-               done: true,
-               value: null
-           }
-       }
+        }
+        else {
+            return {
+                done: true,
+                value: null
+            }
+        }
     }
 
     public hasNext(): Boolean {
+        return this.pointer < this.collection.length;
     }
 }
 
